@@ -242,7 +242,7 @@ function Form({
           <span>Enter URL*</span>
           <br />
           <input
-            type={url}
+            type="url"
             placeholder="Enter url"
             id="url"
             name="url"
@@ -285,7 +285,7 @@ function Form({
           <input
             type="textArea"
             placeholder="About ur self"
-            style={{ height: "100px", width: "250px" }}
+            style={{ height: "100px", width: "80%" }}
             id="about"
             value={about}
             onChange={(e) => setAbout(e.target.value)}
@@ -306,15 +306,3 @@ function Form({
 }
 
 export default SubmissionForm;
-
-/*
-       
-        
-        
-       
-
-   
-      
-          
-        
-         */
