@@ -16,6 +16,8 @@ function SubmissionForm() {
   });
   const [resume, setResume] = useState("");
   const [url, setUrl] = useState("");
+  const [answer, setAnswer] = useState("");
+  const [about, setAbout] = useState("");
 
   return (
     <div className="app">
@@ -37,6 +39,10 @@ function SubmissionForm() {
         setResume={setResume}
         url={url}
         setUrl={setUrl}
+        answer={answer}
+        setAnswer={setAnswer}
+        about={about}
+        setAbout={setAbout}
       />
     </div>
   );
@@ -59,6 +65,10 @@ function Form({
   setResume,
   url,
   setUrl,
+  answer,
+  setAnswer,
+  about,
+  setAbout,
 }) {
   function handleSubmit(e) {
     e.preventDefault();
@@ -70,6 +80,8 @@ function Form({
       selectOption,
       resume,
       url,
+      answer,
+      about,
     };
 
     console.log(newData);
@@ -83,6 +95,8 @@ function Form({
     setSelectOption("");
     setSelectSubject({ english: false, maths: false, physics: false });
     setUrl("");
+    setAnswer("");
+    setAbout("");
   }
 
   function handleOptionChange(e) {
@@ -232,17 +246,52 @@ function Form({
             placeholder="Enter url"
             id="url"
             name="url"
+            value={url}
             onChange={(e) => setUrl(e.target.value)}
           />
         </div>
         <br />
+
         <div>
           <label htmlFor="answer">Select your Choice:</label>
           <br />
-          <select name="answer" id="answer">
-            <option value="choiceA">Choice-A</option>
-            <option value="choiceB">Choice-B</option>
+
+          <select
+            name="answer"
+            id="answer"
+            value={answer}
+            onChange={(e) => {
+              setAnswer(e.target.value);
+            }}
+          >
+            <option value="" disabled selected={answer === ""}>
+              Select Your Choice
+            </option>
+            <optgroup label="beginner">
+              <option value="html">html</option>
+              <option value="css">Css</option>
+              <option value="javascript">javascript</option>
+            </optgroup>
+            <optgroup label="advance">
+              <option value="React">React</option>
+            </optgroup>
           </select>
+        </div>
+
+        <br />
+        <div>
+          <label htmlFor="about">About</label>
+          <br />
+          <input
+            type="textArea"
+            placeholder="About ur self"
+            style={{ height: "100px", width: "250px" }}
+            id="about"
+            value={about}
+            onChange={(e) => setAbout(e.target.value)}
+          />
+
+          <p>Submit or Reset</p>
         </div>
 
         <div className="resetBtn">
@@ -267,17 +316,5 @@ export default SubmissionForm;
    
       
           
-        <br />
-        <div>
-          <label htmlFor="about">About</label>
-          <br />
-          <input
-            type="textArea"
-            placeholder="About ur self"
-            style={{ height: "100px", width: "250px" }}
-            id="about"
-          />
-
-          <p>Submit or Reset</p>
-        </div>
+        
          */
