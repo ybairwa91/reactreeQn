@@ -15,6 +15,7 @@ function SubmissionForm() {
     physics: false,
   });
   const [resume, setResume] = useState("");
+  const [url, setUrl] = useState("");
 
   return (
     <div className="app">
@@ -34,6 +35,8 @@ function SubmissionForm() {
         setSelectSubject={setSelectSubject}
         resume={resume}
         setResume={setResume}
+        url={url}
+        setUrl={setUrl}
       />
     </div>
   );
@@ -54,6 +57,8 @@ function Form({
   setSelectSubject,
   resume,
   setResume,
+  url,
+  setUrl,
 }) {
   function handleSubmit(e) {
     e.preventDefault();
@@ -64,6 +69,7 @@ function Form({
       contact,
       selectOption,
       resume,
+      url,
     };
 
     console.log(newData);
@@ -76,6 +82,7 @@ function Form({
     setContact(0);
     setSelectOption("");
     setSelectSubject({ english: false, maths: false, physics: false });
+    setUrl("");
   }
 
   function handleOptionChange(e) {
@@ -202,6 +209,7 @@ function Form({
           <label htmlFor="physics">physics</label>
         </div>
         <br />
+
         <div>
           <span>Upload Resume*</span>
           <br />
@@ -210,12 +218,32 @@ function Form({
             id="myfile"
             name="myfile"
             onChange={(e) => {
-              setResume(e.target.value[0]);
+              setResume(e.target.value);
             }}
           />
         </div>
-
         <br />
+
+        <div>
+          <span>Enter URL*</span>
+          <br />
+          <input
+            type={url}
+            placeholder="Enter url"
+            id="url"
+            name="url"
+            onChange={(e) => setUrl(e.target.value)}
+          />
+        </div>
+        <br />
+        <div>
+          <label htmlFor="answer">Select your Choice:</label>
+          <br />
+          <select name="answer" id="answer">
+            <option value="choiceA">Choice-A</option>
+            <option value="choiceB">Choice-B</option>
+          </select>
+        </div>
 
         <div className="resetBtn">
           <button type="reset" onClick={handleReset}>
@@ -236,23 +264,8 @@ export default SubmissionForm;
         
        
 
-        <div>
-          <span>Enter URL*</span>
-          <br />
-          <input type="url" placeholder="Enter url" id="url" name="url" />
-        </div>
-
-        <br />
-
    
-        <div>
-          <label htmlFor="answer">Select your Choice:</label>
-          <br />
-          <select name="answer" id="answer">
-            <option value="choiceA">Choice-A</option>
-            <option value="choiceB">Choice-B</option>
-          </select>
-        </div>
+      
           
         <br />
         <div>
