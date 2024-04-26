@@ -7,7 +7,7 @@ function SubmissionForm() {
   const [fname, setFname] = useState("");
   const [sname, setSname] = useState("");
   const [email, setEmail] = useState("");
-  const [contact, setContact] = useState(0);
+  const [contact, setContact] = useState("");
   const [selectOption, setSelectOption] = useState("");
   const [selectSubject, setSelectSubject] = useState({
     english: false,
@@ -152,7 +152,7 @@ function Form({
           <input
             id="contact"
             value={contact}
-            onChange={(e) => setContact(e.target.value)}
+            onChange={(e) => Number(setContact(e.target.value))}
             name="contact"
             placeholder="Enter Mobile Number"
             type="number"

@@ -3,7 +3,7 @@ body {
   margin: auto 500px;
   width: 500px;
   /* padding: 2px; */
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .app {
   background-color: white;
@@ -11,9 +11,8 @@ body {
 }
 
 .app h1 {
-  color: green;
+  color: rgb(13, 240, 13);
   text-align: center;
-  
 }
 
 .form {
@@ -25,11 +24,18 @@ input {
   margin: 0.5rem;
 }
 .resetBtn button {
+  font-family: Arial, Helvetica, sans-serif;
+  border: transparent;
   margin-top: 1rem;
   border-radius: 7px;
-  display: flex;
+  width: 10rem;
   padding: 0.5rem;
-  background-color: green;
+  background-color: rgb(53, 222, 53);
   color: black;
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.resetBtn {
+  /* width: 70%; */
+  display: flex;
+  justify-content: space-between;
 }
