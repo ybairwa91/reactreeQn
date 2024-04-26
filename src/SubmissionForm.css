@@ -1,0 +1,32 @@
+body {
+  background-color: rgb(232, 227, 227);
+  margin: auto 500px;
+  width: 500px;
+  /* padding: 2px; */
+}
+.app {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.app h1 {
+  color: green;
+  text-align: center;
+}
+
+input {
+  margin: 0.5rem;
+}
+.resetBtn button {
+  margin-top: 1rem;
+  border-radius: 7px;
+  display: flex;
+  padding: 0.5rem;
+  background-color: green;
+}
+
+.form {
+  margin-left: 5rem;
+  padding: 1rem;
+  height: 50%;
+}
