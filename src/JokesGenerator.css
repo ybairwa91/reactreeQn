@@ -1,0 +1,28 @@
+body {
+  background-color: rgb(6, 76, 40);
+}
+
+.app h1 {
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+}
+
+.app button {
+  margin: auto 38rem;
+  width: 20%;
+  height: 3rem;
+  text-align: center;
+  font-size: large;
+  /* color: white; */
+  background-color: rgb(55, 233, 20);
+  border: transparent;
+  border-radius: 7px;
+}
+
+.app p{
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
